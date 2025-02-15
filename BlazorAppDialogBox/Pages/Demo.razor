@@ -3,13 +3,13 @@
 
 @code {
     [Parameter]
-    public Action OnIncrement { get; set; }
+    public Action<bool, string> OnIncrement { get; set; }
 
     int count = 0;
 
     private void IncrementCount()
     {
         count++;
-        OnIncrement?.Invoke();
+        OnIncrement?.Invoke(true, "Count incremented");
     }
 }
