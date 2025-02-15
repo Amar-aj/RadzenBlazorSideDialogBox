@@ -1,0 +1,15 @@
+﻿<h3>Demo : @count</h3>
+<RadzenButton Click="IncrementCount">Click me</RadzenButton>
+
+@code {
+    [Parameter]
+    public Action OnIncrement { get; set; }
+
+    int count = 0;
+
+    private void IncrementCount()
+    {
+        count++;
+        OnIncrement?.Invoke();
+    }
+}
