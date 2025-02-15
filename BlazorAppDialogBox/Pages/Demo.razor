@@ -1,10 +1,10 @@
 ﻿<h3>Demo : @count</h3>
-<RadzenButton Click="IncrementCount">Click me</RadzenButton>
-
+<RadzenButton ButtonStyle="ButtonStyle.Base" Text="Cancel " Click="@(_ => Service.CloseSide())" />
+<RadzenButton ButtonStyle="ButtonStyle.Primary" Click="IncrementCount">Click me</RadzenButton>
 @code {
     [Parameter]
     public Action<bool, string> OnIncrement { get; set; }
-
+    [Inject] DialogService Service { get; set; }
     int count = 0;
 
     private void IncrementCount()
